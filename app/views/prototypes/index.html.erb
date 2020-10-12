@@ -1,10 +1,15 @@
 <main class="main">
   <div class="inner">  
-     こんにちわ
-     <%= link_to current_user.name,"/users/#{current_user.id}" %>
-      さん 
-  </div>     
+    <% if user_signed_in? %>
+      <div class=“greeting”>
+         <%= "こんにちわ、" %>
+         <%= link_to current_user.name,"/users/#{current_user.id}" %>
+         <%= "さん" %>  
+      </div>
+    <% end %>    
     <div class="card__wrapper">
-     <%= render partial: 'prototype', collection: @prototypes %>
-   </div>
+      <%= render partial: 'prototype', collection: @prototypes %>
+      
+    </div>
+  </div>
 </main>
