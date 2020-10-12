@@ -1,11 +1,10 @@
 <main class="main">
   <div class="inner">  
-   <%= "こんにちわ、" %>
-   <%= link_to current_user.name,"/users/#{current_user.id}" %>
-   <%= "さん" %>      
+     こんにちわ
+     <%= link_to current_user.name,"/users/#{current_user.id}" %>
+      さん 
+  </div>     
     <div class="card__wrapper">
-      <%= render partial: 'prototype', collection: @prototypes %>
-      
-    </div>
-  </div>
+     <%= render partial: 'prototype', collection: @prototypes %>
+   </div>
 </main>
