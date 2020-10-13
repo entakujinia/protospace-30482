@@ -1,6 +1,7 @@
 class PrototypesController < ApplicationController
-  before_action :move_to_edit, only: [:edit]
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new] 
+  before_action :move_to_edit, expect: [:index, :show]
+  
   
   
   
