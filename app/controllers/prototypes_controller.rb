@@ -1,6 +1,6 @@
 class PrototypesController < ApplicationController
   before_action :authenticate_user!, only: [:new] 
-  before_action :move_to_edit, expect: [:index, :show]
+  before_action :move_to_edit, only:[:new, :create, :edit, :update] 
   
   
   
@@ -31,11 +31,11 @@ class PrototypesController < ApplicationController
 
   def edit
     @prototype = Prototype.find(params[:id])
-    if @prototype.user == current_user
-      render "edit"
-    else
-      redirect_to root_path
-    end
+    # if @prototype.user == current_user
+    #   render "edit"
+    # else
+    #   redirect_to root_path
+    # end
   end
 
   def update
